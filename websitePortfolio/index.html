@@ -6,6 +6,8 @@
   <title>Your Name – Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <!-- Dialogflow or BotUI CSS if needed -->
+  <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -59,20 +61,21 @@
   </section>
 
   <!-- Chatbot widget -->
-  <div id="chatbot"></div>
+ <section id="chatbot-section">
+    <h2>Chat with me!</h2>
+    <div id="botui-app"></div>
+  </section>
 
+  <!-- QRcode and main scripts -->
   <script src="js/qrcode.min.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Vue & BotUI scripts -->
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+  
+  <!-- Your chatbot logic -->
   <script src="js/chatbot.js"></script>
-
-<!-- Chatbot Integration </body> -->
-<link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/botui/build/botui.min.js"></script>
-
-<div id="botui-app">
-  <bot-ui></bot-ui>
-</div>
 
 </body>
 </html>
