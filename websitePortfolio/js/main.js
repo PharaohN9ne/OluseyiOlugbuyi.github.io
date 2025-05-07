@@ -20,3 +20,9 @@ const qrcode = new QRCode(document.getElementById('qrcode'), {
   width: 128,
   height: 128
 });
+
+// chat-toggle
+document.getElementById('chat-toggle').addEventListener('click', () => {
+  const botEl = document.getElementById('botui-app');
+  botEl.style.display = botEl.style.display === 'none' ? 'block' : 'none';
+});
