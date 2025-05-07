@@ -22,3 +22,8 @@ h1, h2 { margin-bottom: 1rem; }
 @media (max-width: 600px) {
   nav ul { flex-direction: column; }
 }
+
+/* Overriding botUI defaults */
+.botui-message.botui-message-human { background: #e0f7fa; }
+.botui-message.botui-message-bot   { background: #cce7ff; }
+
