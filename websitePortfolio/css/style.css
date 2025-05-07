@@ -41,3 +41,5 @@ h1, h2 { margin-bottom: 1rem; }
 .message.user { text-align:right; }
 #user-input { width:100%; padding:0.5em; border:1px solid #ccc; border-radius:4px; margin-top:0.5em; }
 .hidden { display:none; }
+/* hide body when collapsed */
+#chatbot.collapsed #chat-body { display: none; }
