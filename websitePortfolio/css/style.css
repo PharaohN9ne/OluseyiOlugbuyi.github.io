@@ -30,6 +30,11 @@ img {
   display: block;        /* removes small gaps under images */
 }
 
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Chatbot widget */
 #chatbot {
   position: fixed; bottom: 1em; right: 1em;
