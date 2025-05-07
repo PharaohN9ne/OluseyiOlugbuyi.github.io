@@ -1,17 +1,22 @@
-// Smooth scroll for internal links
-document.querySelectorAll('nav a').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
-  });
-});
+// js/main.js
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Optional: dynamic QR-code generation (if using <div class="qr-code"></div> in HTML)
+  const qrDiv = document.querySelector('#resume .qr-code');
+  if (qrDiv && qrDiv.tagName === 'DIV') {
+    new QRCode(qrDiv, {
+      text: window.location.href,
+      width: 150,
+      height: 150
+    });
+  }
 
-// Simple contact form handler (you can wire up to an email service)
-document.getElementById('contactForm').addEventListener('submit', e => {
-  e.preventDefault();
-  alert('Thanks for reaching out! I’ll get back to you soon.');
-  e.target.reset();
+  // 2. Contact form stub
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert("Thank you! I'll get back to you soon.");
+    form.reset();
+  });
 });
 
 // Generate QR code
