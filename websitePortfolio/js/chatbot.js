@@ -5,16 +5,17 @@ const faq = [
   // …add more Q&A pairs
 ];
 
+// elements
 const chat = document.getElementById('chatbot');
 const body = document.getElementById('chat-body');
 const toggle = document.getElementById('chat-toggle');
 const messages = document.getElementById('messages');
 const input = document.getElementById('user-input');
 
-// Show/hide
-toggle.addEventListener('click', () => {
-  body.classList.toggle('hidden');
-  toggle.textContent = body.classList.contains('hidden') ? '+' : '–';
+// Show / hide on header click (toggle `.collapsed` on the container)
+header.addEventListener('click', () => {
+  chat.classList.toggle('collapsed');
+  toggle.textContent = chat.classList.contains('collapsed') ? '+' : '–';
 });
 
 // Handle user input
@@ -31,6 +32,7 @@ input.addEventListener('keydown', e => {
   }
 });
 
+// Match question against FAQ regexes
 function getResponse(text) {
   for (let {q,a} of faq) {
     if (q.test(text)) return a;
@@ -38,6 +40,7 @@ function getResponse(text) {
   return "Sorry, I don't understand. Try asking about my skills, experience, or projects!";
 }
 
+// Helper to append a message bubble
 function appendMessage(text, who) {
   const div = document.createElement('div');
   div.className = `message ${who}`;
