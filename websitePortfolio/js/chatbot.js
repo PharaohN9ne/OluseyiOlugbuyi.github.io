@@ -17,15 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const faq = [
     {
       q: /skills/i,
-      a: "I’m proficient in HTML, CSS, JavaScript, React, and Node.js."
+      a: "I’m proficient in HTML, CSS, JavaScript, Network Security, Ethical hacking, and Risk management."
     },
     {
       q: /experience/i,
-      a: "I’ve worked on X, Y, and Z projects; held roles at Company A and Company B."
+      a: "I’ve worked on Coordinated scheduling between clients and title companies at Engel & Volkers America. Also Maintained budgets on a weekly basis with Global Street Development."
     },
     {
       q: /projects/i,
-      a: "You can browse my GitHub projects in the Projects section above!"
+      a: "You can browse my GitHub projects in the Projects section!"
+    },
+     {
+      q: /jobs/i,
+      a: "I've worked for Global Street Development and Engel & Volkers America!!"
+    },
+     {
+      q: /references/i,
+      a: "You can Send me a note or Ask about ME! I'm know all over."
     }
     // …add more Q&A pairs here
   ];
@@ -55,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let { q, a } of faq) {
       if (q.test(text)) return a;
     }
-    return "Sorry, I don't understand. Try asking about my skills, experience, or projects!";
+    return "Sorry, I don't understand. Try asking about my skills, experience, jobs, references or projects!";
   }
 
   // Append a message bubble
