@@ -36,4 +36,8 @@ h1, h2 { margin-bottom: 1rem; }
   margin-top: 1rem;
 }
 
+#botui-app { display: none; }
+#chat-toggle { position: fixed; bottom: 1rem; right: 1rem; z-index:1000; }
+
+
 
