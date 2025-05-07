@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dialogflow or BotUI CSS if needed -->
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Hello, I’m Your Name</h1>
+    <p>Brief intro or tagline.</p>
+    <div id="qrcode"></div> <!-- QR Code -->
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Detail your skills, experiences, education.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/you/project-one" target="_blank">Project One</a> – short description.</li>
+      <!-- more projects -->
+    </ul>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="assets/resume.pdf" target="_blank">View / Download Resume</a></p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Chatbot widget -->
+  <div id="chatbot"></div>
+
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
