@@ -23,7 +23,17 @@ h1, h2 { margin-bottom: 1rem; }
   nav ul { flex-direction: column; }
 }
 
-/* Overriding botUI defaults */
-.botui-message.botui-message-human { background: #e0f7fa; }
-.botui-message.botui-message-bot   { background: #cce7ff; }
+#chatbot-section {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 4rem auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+#botui-app {
+  margin-top: 1rem;
+}
+
 
