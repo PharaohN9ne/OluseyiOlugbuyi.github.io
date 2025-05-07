@@ -1,41 +1,46 @@
-// js/chatbot.js
+const faq = [
+  { q: /skills/i, a: "I’m proficient in HTML, CSS, JavaScript, React, and Node.js." },
+  { q: /experience/i, a: "I’ve worked on X, Y, and Z projects; held roles at Company A and Company B." },
+  { q: /projects/i, a: "You can browse my GitHub projects in the Projects section above!" },
+  // …add more Q&A pairs
+];
 
-// Initialize BotUI
-const botui = new BotUI('botui-app');
+const chat = document.getElementById('chatbot');
+const body = document.getElementById('chat-body');
+const toggle = document.getElementById('chat-toggle');
+const messages = document.getElementById('messages');
+const input = document.getElementById('user-input');
 
-// A simple FAQ bot
-function startChat() {
-  botui.message
-    .add({ content: '👋 Hi there! I’m YourBot. Ask me about my skills, projects, or experience.' })
-    .then(() => askQuestion());
-}
+// Show/hide
+toggle.addEventListener('click', () => {
+  body.classList.toggle('hidden');
+  toggle.textContent = body.classList.contains('hidden') ? '+' : '–';
+});
 
-function askQuestion() {
-  botui.action
-    .text({ action: { placeholder: 'Type your question here...' } })
-    .then(res => {
-      handleQuery(res.value.trim());
-    });
-}
-
-function handleQuery(input) {
-  const q = input.toLowerCase();
-  let reply = "🤔 Hmm, I don't quite get that. Can you try rephrasing?";
-
-  if (q.includes('skill')) {
-    reply = '💻 I’m proficient in HTML, CSS, JavaScript, React, Node.js, and more.';
-  } else if (q.includes('project')) {
-    reply = '📂 Check out my GitHub: https://github.com/you';
-  } else if (q.includes('experience') || q.includes('work')) {
-    reply = '🛠️ I’ve worked at Acme Corp as a Front-End Engineer and interned at Beta Inc.';
-  } else if (q.includes('education') || q.includes('school')) {
-    reply = '🎓 I hold a B.S. in Computer Science from University XYZ.';
+// Handle user input
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && input.value.trim()) {
+    const userText = input.value;
+    appendMessage(userText, 'user');
+    input.value = '';
+    setTimeout(() => {
+      const reply = getResponse(userText);
+      appendMessage(reply, 'bot');
+      body.scrollTop = body.scrollHeight;
+    }, 300);
   }
+});
 
-  botui.message
-    .add({ content: reply })
-    .then(() => askQuestion());
+function getResponse(text) {
+  for (let {q,a} of faq) {
+    if (q.test(text)) return a;
+  }
+  return "Sorry, I don't understand. Try asking about my skills, experience, or projects!";
 }
 
-// Kick things off
-startChat();
+function appendMessage(text, who) {
+  const div = document.createElement('div');
+  div.className = `message ${who}`;
+  div.textContent = text;
+  messages.appendChild(div);
+}
