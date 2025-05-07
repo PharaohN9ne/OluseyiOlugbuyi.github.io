@@ -23,21 +23,21 @@ h1, h2 { margin-bottom: 1rem; }
   nav ul { flex-direction: column; }
 }
 
-#chatbot-section {
-  padding: 2rem;
-  max-width: 600px;
-  margin: 4rem auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
+/* Chatbot widget */
+#chatbot {
+  position: fixed; bottom: 1em; right: 1em;
+  width: 300px; font-size:14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius:8px; overflow:hidden;
+  background:#f9f9f9; transition: opacity 0.3s;
 }
-
-#botui-app {
-  margin-top: 1rem;
+#chat-header {
+  background:#007ACC; color:#fff; padding:0.5em; cursor:pointer;
 }
-
-#botui-app { display: none; }
-#chat-toggle { position: fixed; bottom: 1rem; right: 1rem; z-index:1000; }
-
-
-
+#chat-header #chat-toggle { float:right; cursor:pointer; }
+#chat-body { display:block; padding:0.5em; background:#fff; max-height:350px; overflow-y:auto; }
+#messages { min-height:150px; }
+.message { margin-bottom:0.5em; }
+.message.user { text-align:right; }
+#user-input { width:100%; padding:0.5em; border:1px solid #ccc; border-radius:4px; margin-top:0.5em; }
+.hidden { display:none; }
