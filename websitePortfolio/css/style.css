@@ -23,6 +23,13 @@ h1, h2 { margin-bottom: 1rem; }
   nav ul { flex-direction: column; }
 }
 
+/* Make all images scale down to their container’s width */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;        /* removes small gaps under images */
+}
+
 /* Chatbot widget */
 #chatbot {
   position: fixed; bottom: 1em; right: 1em;
